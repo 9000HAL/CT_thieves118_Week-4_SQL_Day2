@@ -11,8 +11,9 @@ CREATE TABLE customer(
 
 CREATE TABLE tickets(
     ticket_id SERIAL PRIMARY KEY,
-    FOREIGN KEY (payment_id) REFERENCES customer(payment_id),
-    ticket_details
+    payment_id INTEGER,
+    ticket_details VARCHAR,
+    FOREIGN KEY (payment_id) REFERENCES customer(payment_id)
 );
 
 
